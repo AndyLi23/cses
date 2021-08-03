@@ -4,9 +4,10 @@ using namespace std;
 #define FOR(i, n) for(int (i) = 0 ; (i) < (n); ++(i))
 #define FOR2(i, a, b) for(int (i) = (a); (i) < (b); ++(i))
 #define FOR2R(i, b, a) for(int (i) = (b); (i) >= (a); --(i))
-#define ll long long
 
 int N;
+long long ans, cur;
+pair<int, int> a[200000];
 
 int main() {
     ios::sync_with_stdio(0);
@@ -16,4 +17,16 @@ int main() {
 
     cin >> N;
 
+    FOR(i, N) {
+        cin >> a[i].first >> a[i].second;
+    }
+
+    sort(a, a + N);
+
+    FOR(i, N) {
+        cur += a[i].first;
+        ans += a[i].second - cur;
+    }
+
+    cout << ans << endl;
 }
