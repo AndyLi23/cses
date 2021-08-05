@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "random": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "__locale": "cpp"
     }
 }
