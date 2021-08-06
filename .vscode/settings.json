@@ -5,6 +5,7 @@
         "random": "cpp",
         "algorithm": "cpp",
         "__locale": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "rope": "cpp"
     }
 }
