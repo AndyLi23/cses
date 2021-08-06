@@ -4,6 +4,7 @@
         "iostream": "cpp",
         "random": "cpp",
         "algorithm": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "valarray": "cpp"
     }
 }
