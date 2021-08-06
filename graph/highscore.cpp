@@ -11,6 +11,8 @@ long long dist[5000];
 bool seen[5000][2];
 vector<int> adj[2500], adj2[2500];
 
+//FIND SHORTEST ROUTE BETWEEN 1 and N, WATCHING FOR CYCLES
+
 long long BellmanFord(int source, vector<tuple<int, int, int> > e) {
 
     FOR(i, N) {

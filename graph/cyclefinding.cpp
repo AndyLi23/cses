@@ -8,7 +8,10 @@ using namespace std;
 
 int N, M, a, b, cur, path[5000];
 long long dist[5000];
-bool bad[5000], seen[5000];
+bool seen[5000];
+
+
+//NEGATIVE CYCLE IN WEIGHTED GRAPH (BELLMAN-FORD)
 
 int BellmanFord(int source, vector<tuple<int, int, int> > e) {
 
@@ -24,8 +27,7 @@ int BellmanFord(int source, vector<tuple<int, int, int> > e) {
             if((long long) dist[b] > (long long) dist[a] + (long long) w) {
                 dist[b] = (long long) dist[a] + (long long) w;
                 path[b] = a;
-                if(i == N-1 && !bad[a] && !bad[b]) {
-                    //detect cycles on path from source to N-1
+                if(i == N-1) {
                     return a;
                 }
             }

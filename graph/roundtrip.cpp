@@ -11,7 +11,10 @@ vector<int> roads[100005];
 pair<int, int> cur;
 int from[100005];
 
-int bfs(int start) {
+
+//CYCLE IN UNDIRECTED GRAPH (IDK HOW IT WORKS)
+
+int dfs(int start) {
     stack<pair<int, int> > q;
 
     q.push({start, -1});
@@ -52,7 +55,7 @@ int main() {
 
     FOR(i, N) {
         if(!from[i+1]) {
-            int temp = bfs(i + 1);
+            int temp = dfs(i + 1);
             if(temp) {
 
                 vector<int> ans;

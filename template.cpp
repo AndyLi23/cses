@@ -5,6 +5,7 @@ using namespace std;
 #define FOR2(i, a, b) for(int (i) = (a); (i) < (b); ++(i))
 #define FOR2R(i, b, a) for(int (i) = (b); (i) >= (a); --(i))
 #define ll long long
+#define pb push_back
 
 int N;
 
