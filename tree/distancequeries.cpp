@@ -7,7 +7,7 @@ using namespace std;
 #define ll long long
 #define pb push_back
 
-int N, Q, a, b, ind[200005];
+int N, Q, a, b, ind[200005], dist[200005];
 vector<int> adj[200005];
 vector<pair<int, int> > arr, tree(800010);
 
@@ -23,7 +23,7 @@ int getmin(int a, int b) {
         if(b%2==0) s = min(s, tree[b--]);
         a /= 2; b /= 2;
     }
-    return s.second;
+    return s.first;
 }
 
 //initialize with another array a (size should be N)
@@ -40,6 +40,7 @@ void init(vector<pair<int, int> > a) {
 void dfs(int src, int prev, int d) {
     arr.pb({d, src});
     ind[src] = arr.size()-1;
+    dist[src] = d;
     for(int c : adj[src]) {
         if(c != prev) {
             dfs(c, src, d + 1);
@@ -57,8 +58,9 @@ int main() {
     cin >> N >> Q;
 
     FOR(i, N-1) {
-        cin >> a;
-        adj[a].pb(i+2);
+        cin >> a >> b;
+        adj[a].pb(b);
+        adj[b].pb(a);
     }
 
     dfs(1, -1, 1);
@@ -68,6 +70,6 @@ int main() {
 
     FOR(i, Q) {
         cin >> a >> b;
-        cout << getmin(min(ind[a], ind[b]), max(ind[a], ind[b])) << endl;
+        cout << dist[a] + dist[b] - 2*getmin(min(ind[a], ind[b]), max(ind[a], ind[b])) << endl;
     }
 }

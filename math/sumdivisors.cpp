@@ -6,9 +6,9 @@ using namespace std;
 #define FOR2R(i, b, a) for(int (i) = (b); (i) >= (a); --(i))
 #define ll long long
 #define pb push_back
-const int MOD = 1000000007;
 
-int N;
+ll N, MOD = 1000000007, ans;
+
 
 int main() {
     ios::sync_with_stdio(0);
@@ -18,4 +18,17 @@ int main() {
 
     cin >> N;
 
+    for (ll i = 1, j; i <= N; i=j) {
+        ll q = N / i;
+        j = (N / q) + 1;
+
+        ll x = j - i;
+        ll y = i + j - 1;
+        if(x%2==0) x /= 2;
+        else y /= 2;
+        x %= MOD, y %= MOD;
+        ans = (ans + q % MOD * x % MOD * y % MOD) % MOD;
+    }
+
+    cout << ans << endl;
 }
