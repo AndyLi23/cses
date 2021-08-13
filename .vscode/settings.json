@@ -6,6 +6,10 @@
         "algorithm": "cpp",
         "__locale": "cpp",
         "valarray": "cpp",
-        "rope": "cpp"
+        "rope": "cpp",
+        "memory": "cpp",
+        "regex": "cpp",
+        "span": "cpp",
+        "utility": "cpp"
     }
 }
